@@ -2,33 +2,10 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Clock from 'react-live-clock';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ContactList from './components/contactList.js'
-
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>HORA ACTUAL / TEMPERATURA</Text>
-      <Clock format={'HH:mm:ssa'} ticking={true} />
-    </View>
-  );
-}
-
-function ContactsScreen() {
-  return (
-    <ContactList />
-  );
-}
-
-function AboutUsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>IDENTIFICACION DE CADA APLICACIÓN</Text>
-    </View>
-  );
-}
+import Home from './screens/home.js';
+import AboutUs from './screens/aboutUs';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,9 +31,9 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Contacts" component={ContactsScreen} />
-        <Tab.Screen name="AboutUs" component={AboutUsScreen} />
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Contacts" component={ContactList} />
+        <Tab.Screen name="AboutUs" component={AboutUs} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -4,7 +4,7 @@ import data from '../assets/contactsData';
 import { Text, View } from "react-native";
 import styles from '../styles/contactList';
 
-export default function contactList() {
+export default function ContactList() {
     return (
         <AlphabetList
         data={data}
