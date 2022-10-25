@@ -23,8 +23,8 @@ export default function Scanner({setData, width}) {
         <>
             {        
             !hasPermission ?
-                <View>
-                    <Text style={{ margin: 10 }}>Sin acceso a la cámara.</Text>
+                <View style={{ margin: 10, height: width, width: width }}>
+                    <Text>Sin acceso a la cámara.</Text>
                 </View>
             :
                 <BarCodeScanner

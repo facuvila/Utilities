@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ContactList from './components/contactList.js'
+import Contacts from './screens/contacts.js'
 import Home from './screens/home.js';
 import AboutUs from './screens/aboutUs';
 
@@ -31,8 +31,8 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Contacts" component={ContactList} />
+        <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+        <Tab.Screen name="Contacts" component={Contacts} />
         <Tab.Screen name="AboutUs" component={AboutUs} />
       </Tab.Navigator>
     </NavigationContainer>

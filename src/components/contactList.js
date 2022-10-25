@@ -13,7 +13,9 @@ export default function ContactList() {
             fontSize: 15,
         }}
         renderCustomListHeader={() => (
-            <Text style={styles.listHeaderLabel}>{data.length} contactos</Text>
+            <View style={styles.listHeaderContainer}>
+                <Text style={styles.listHeaderLabel}>{data.length} contactos</Text>
+            </View>
         )}
         renderCustomItem={(item) => (
             <View style={styles.listItemContainer}>

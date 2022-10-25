@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import WeatherChart from '../components/weatherChart'
 
 function Home() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>HORA ACTUAL / TEMPERATURA</Text>
-        </View>
+        <WeatherChart weather={"Clouds"} temperature={17}/>
     );
 };
 

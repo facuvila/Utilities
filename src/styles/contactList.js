@@ -50,6 +50,12 @@ const styles = StyleSheet.create({
       color: colors.text.dark,
       fontSize: 14,
     },
+
+    listHeaderContainer: {
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 10,
+    },
   
     sectionHeaderContainer: {
       height: sizes.headerHeight,
@@ -57,7 +63,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       paddingHorizontal: sizes.spacing.regular,
     },
-  
+    
     sectionHeaderLabel: {
       color: colors.background.light,
     },
