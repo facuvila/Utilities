@@ -4,7 +4,7 @@ import WeatherChart from '../components/weatherChart'
 
 function Home() {
     return (
-        <WeatherChart weather={"Clouds"} temperature={17}/>
+        <Text>Hola</Text>
     );
 };
 

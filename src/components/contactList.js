@@ -1,10 +1,11 @@
 import { AlphabetList } from "react-native-section-alphabet-list";
 import React from 'react';
-import data from '../assets/contactsData';
+import contactsData from '../helpers/contactsData';
 import { Text, View } from "react-native";
 import styles from '../styles/contactList';
 
-export default function ContactList() {
+export default async function ContactList() {
+    data = await contactsData()
     return (
         <AlphabetList
         data={data}
