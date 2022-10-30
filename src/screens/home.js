@@ -4,7 +4,7 @@ import WeatherChart from '../components/weatherChart'
 
 function Home() {
     return (
-        <Text>Hola</Text>
+        <WeatherChart/>
     );
 };
 

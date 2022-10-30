@@ -1,7 +1,7 @@
 import { AlphabetList } from "react-native-section-alphabet-list";
 import React, { useEffect, useState } from 'react';
-    import { Text, View } from "react-native";
-import styles from '../styles/contactList';
+import { Text, View } from "react-native";
+import styles from '../styles/contacts';
 import * as Contacts from 'expo-contacts';
 
 function modifier(item) {

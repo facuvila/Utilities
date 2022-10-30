@@ -67,6 +67,12 @@ const styles = StyleSheet.create({
     sectionHeaderLabel: {
       color: colors.background.light,
     },
+
+    emergencyContainer: {
+      position: 'relative',
+      flex: 1,
+      heigth: 100,
+    }
 })
 
 export default styles;
