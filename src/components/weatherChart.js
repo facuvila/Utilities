@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { weatherConditions } from '../utils/WeatherConditions';
 import styles from '../styles/weatherChart';
+import vibrateAlert from '../helpers/vibrateAlert';
 import { API_KEY } from '../utils/weatherAPIKey';
 
 const Weather = () => {
@@ -29,7 +30,11 @@ const Weather = () => {
           weatherCondition: json.weather[0].main,
           error: null
         })
-      });
+      })
+      .catch(error => {
+        vibrateAlert(error)
+      }
+      );
   }
 
   return (

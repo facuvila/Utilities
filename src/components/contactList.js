@@ -8,7 +8,7 @@ function modifier(item) {
     return { value: item.name, key: item.id, phoneNumber: item.phoneNumbers[0].digits}
 }
 
-export default function ContactList() {
+export default function ContactList({emergencyContact}) {
     const [contacts, setContacts] = useState([])
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export default function ContactList() {
             )}
             renderCustomItem={(item) => (
                 <View style={styles.listItemContainer}>
-                    <Text style={styles.listItemLabel}>{item.value} ({item.phoneNumber})</Text>
+                    <Text style={styles.listItemLabel}>{item.value} ({item.phoneNumber}) {emergencyContact ==  item.phoneNumber ? "EMERGENCIA" : null}</Text>
                 </View>
             )}
             renderCustomSectionHeader={(section) => (

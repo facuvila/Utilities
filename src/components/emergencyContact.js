@@ -13,19 +13,19 @@ async function storeData(value) {
     }
 }
 
-export default function emergencyContact() {
-    const [contact, setContact] = useState("")
+export default function emergencyContact({emergencyContact, setEmergencyContact}) {
     const [newContact, setNewContact] = useState("")
 
     return(
         <View styles={styles.container}>
-            {contact ? <Text>Contacto guardado: {contact}</Text> : null}
+            {emergencyContact ? <Text>Contacto guardado: {emergencyContact}</Text> : null}
             <TextInput
                 onChangeText={text => setNewContact(text)}
+                keyboardType = "number-pad"
             />
             <Button title="Guardar" onPress={() => {
                 storeData(newContact)
-                setContact(newContact)
+                setEmergencyContact(newContact)
             }
             }></Button>
         </View>

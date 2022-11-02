@@ -23,7 +23,7 @@ export default function Contacts() {
     return (
         emergencyContact ?
         <View>
-            <EmergencyContact setEmergencyContact={setEmergencyContact}/>
+            <EmergencyContact emergencyContact={emergencyContact} setEmergencyContact={setEmergencyContact}/>
             <ContactList emergencyContact={emergencyContact}/>
         </View> :
         <Text>Cargando...</Text>
