@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import WeatherChart from '../components/weatherChart'
+import { Button, Text, View } from 'react-native';
+import vibrateAlert from '../helpers/vibrateAlert';
 
-function Home() {
+export default function Home() {
     return (
-        <Text>Hola</Text>
+        <View>
+            <Text>Hola</Text>
+            <Button title="Asd" onPress={() => vibrateAlert('error')}/>
+        </View>
     );
 };
-
-export default Home;
