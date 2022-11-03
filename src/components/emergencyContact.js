@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, TextInput, Button } from "react-native";
 import styles from '../styles/emergencyContact';
 import vibrateAlert from '../helpers/vibrateAlert';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 async function storeData(value) {
