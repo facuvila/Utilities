@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { weatherConditions } from '../utils/WeatherConditions';
 import styles from '../styles/weatherChart';
+import vibrateAlert from '../helpers/vibrateAlert';
 import { API_KEY } from '../utils/weatherAPIKey';
 import * as Location from 'expo-location';
 
@@ -14,7 +15,6 @@ const Weather = () => {
     error: null
   });
 
-  const [permissionGranted, setPermissionGranted] = useState(false);
   const [location, setLocation] = useState(false);
 
   useEffect(() => {
@@ -71,5 +71,3 @@ const Weather = () => {
 };
 
 export default Weather;
-
-//https://blog.expo.dev/building-a-minimalist-weather-app-with-react-native-and-expo-fe7066e02c09

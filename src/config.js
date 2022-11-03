@@ -2,7 +2,7 @@ const config = {
     vibrateOnScan: false,
     vibrateOnError: true,
     creatorName: "Facundo Vilamowski",
-    emergencyNumberStorageTag: "@emergencyNumber"
+    vibrate: true,
 }
 
 export default config;

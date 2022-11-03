@@ -1,11 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import WeatherChart from '../components/weatherChart'
+import WeatherChart from '../helpers/vibrateAlert';
 
-function Home() {
+export default function Home() {
     return (
         <WeatherChart/>
     );
 };
-
-export default Home;

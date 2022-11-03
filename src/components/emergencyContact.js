@@ -1,34 +1,33 @@
+import React, { useEffect, useState } from 'react';
+import { Text, View, TextInput, Button } from "react-native";
+import styles from '../styles/emergencyContact';
+import vibrateAlert from '../helpers/vibrateAlert';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { View, Text} from 'react-native';
-import config from '../config'
-import styles from '../styles/contacts';
 
-export default function EmergencyContact() {
 
-    const storeData = async (tag, value) => {
-        try {
-          await AsyncStorage.setItem(tag, value)
-        } catch (e) {
-          console.log(e)
-        }
+async function storeData(value) {
+    try {
+        await AsyncStorage.setItem('@emergency_Number', value)
+    } catch (e) {
+        vibrateAlert('Error guardando contacto')
     }
+}
 
-    
-    const getData = async (tag) => {
-        try {
-            const value = await AsyncStorage.getItem(tag)
-            if(value !== null) {
-                console.log('Tag does not exist')
+export default function emergencyContact({emergencyContact, setEmergencyContact}) {
+    const [newContact, setNewContact] = useState("")
+
+    return(
+        <View styles={styles.container}>
+            {emergencyContact ? <Text>Contacto guardado: {emergencyContact}</Text> : null}
+            <TextInput
+                onChangeText={text => setNewContact(text)}
+                keyboardType = "number-pad"
+            />
+            <Button title="Guardar" onPress={() => {
+                storeData(newContact)
+                setEmergencyContact(newContact)
             }
-        } catch(e) {
-            console.log(e)
-        }
-    }
-
-    return (
-        <View style={styles.emergencyContainer}>
-            <Text>NUMERO DE EMERGENCIA</Text>
+            }></Button>
         </View>
-
     );
 }
